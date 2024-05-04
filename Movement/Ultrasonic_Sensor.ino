@@ -1,3 +1,5 @@
+// Trigger pin is used to trigger the ultrasonic sound pulses. Echo pin produces a pulse when the reflected signal is received from distance object.
+// Distance = (Time * Speed of Sound) / 2
 
 #include "SR04.h"
 #define TRIG_PIN 12
