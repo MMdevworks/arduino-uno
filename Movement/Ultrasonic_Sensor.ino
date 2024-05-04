@@ -16,8 +16,7 @@ void setup() {
    delay(1000);
 
    pinMode(redLED,OUTPUT);
-   pinMode(sr04,INPUT);
-   // digitalWrite(2, HIGH); 
+   pinMode(a,INPUT);
 }
 
 void loop() {
@@ -26,8 +25,10 @@ void loop() {
    Serial.println("cm");
    delay(1000);
 
-   if (a <= 10){      
-      digitalWrite(ledPin, HIGH);
+   if (a <= 10) {
+      digitalWrite(redLED, HIGH);
       Serial.println("UNDER 10");
+   } else {
+      digitalWrite(redLED, LOW);
    }
 }
