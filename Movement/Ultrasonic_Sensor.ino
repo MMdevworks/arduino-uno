@@ -1,6 +1,10 @@
 // Trigger pin is used to trigger the ultrasonic sound pulses. Echo pin produces a pulse when the reflected signal is received from distance object.
 // Distance = (Time * Speed of Sound) / 2
 
+// Utilizing arduino SR04.h library
+
+// Serial monitor indicates when object distance is under 10cm
+
 #include "SR04.h"
 #define TRIG_PIN 12
 #define ECHO_PIN 11
@@ -17,4 +21,8 @@ void loop() {
    Serial.print(a);
    Serial.println("cm");
    delay(1000);
+
+   if (a <= 10):
+   Serial.println("UNDER 10");
+
 }
