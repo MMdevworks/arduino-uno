@@ -8,7 +8,7 @@
 #define TRIG_PIN 12
 #define ECHO_PIN 11
 SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
-long a;
+long dist;
 const int redLED = 5;
 
 void setup() {
@@ -16,16 +16,16 @@ void setup() {
    delay(1000);
 
    pinMode(redLED,OUTPUT);
-   pinMode(a,INPUT);
+   pinMode(dist,INPUT);
 }
 
 void loop() {
-   a=sr04.Distance();
-   Serial.print(a);
+   dist = sr04.Distance();
+   Serial.print(dist);
    Serial.println("cm");
    delay(1000);
 
-   if (a <= 10) {
+   if (dist <= 10) {
       digitalWrite(redLED, HIGH);
       Serial.println("UNDER 10");
    } else {
