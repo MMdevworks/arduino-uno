@@ -4,7 +4,7 @@
 // - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
 
-// Get constant readings, if temperature goes over target: print warning.
+// Get constant readings, if temperature goes over target: print warning with led indication.
 
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
@@ -17,9 +17,13 @@ DHT_Unified dht(DHTPIN, DHTTYPE);
 
 uint32_t delayMS;
 int target_temp = 24;
+const int redLED = 9;
+int sensorTemp;
 
 void setup() {
   Serial.begin(9600);
+  pinMode(redLED,OUTPUT);
+  pinMode(sensorTemp,INPUT);
 
   // Initialize device.
   dht.begin();
@@ -62,12 +66,14 @@ void loop() {
     Serial.println(F("Error reading temperature!"));
   }
   else if (event.temperature > target_temp) {
+    digitalWrite(redLED, HIGH);
     Serial.println(F("WARNING: Temperature Over Target!"));
     // c to f conversion
     Serial.print((event.temperature * 9/5) + 32); 
     Serial.println(F("°F"));
   }
   else {
+    digitalWrite(redLED, LOW);
     Serial.print(F("Temperature: "));
     Serial.print((event.temperature * 9/5) + 32); 
     Serial.println(F("°F"));
