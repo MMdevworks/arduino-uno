@@ -18,3 +18,4 @@ void loop() {
     tone(8, melody[thisNote], duration);
     delay(400);
   }
+}
