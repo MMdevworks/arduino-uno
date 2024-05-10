@@ -13,7 +13,7 @@ void setup() {
     pinMode(RED, OUTPUT);
     pinMode(GREEN, OUTPUT);
     pinMode(BLUE, OUTPUT);
-    digitalWrite(RED, HIGH);
+    digitalWrite(RED, LOW);
     digitalWrite(GREEN, LOW);
     digitalWrite(BLUE, LOW);
 
