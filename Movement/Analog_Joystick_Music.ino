@@ -16,11 +16,24 @@ void setup() {
 
 void loop() {
     if (analogRead(X_pin) == 0){
-      tone(8, NOTE_C4, duration);
+        tone(8, NOTE_A4, duration);
+    }
+    if (analogRead(X_pin) == 1023){
+        tone(8, NOTE_C4, duration);
+    }
+    if (analogRead(X_pin) < 450 && analogRead(X_pin) > 50){
+        tone(8, NOTE_F4, duration);
     }
     if (analogRead(Y_pin) == 0){
-      tone(8, NOTE_G4, duration);
+        tone(8, NOTE_D4, duration);
     }
+    if (analogRead(Y_pin) == 1023){
+        tone(8, NOTE_G4, duration);
+    }
+    if (analogRead(Y_pin) < 450 && analogRead(Y_pin) > 50){
+        tone(8, NOTE_E4, duration);
+    }
+
 
     Serial.print("Switch:  ");
     Serial.print(digitalRead(SW_pin));
