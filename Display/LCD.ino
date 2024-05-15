@@ -1,7 +1,7 @@
 // LCD Display utilizing LiquidCrystal library 
 // https://www.arduino.cc/reference/en/libraries/liquidcrystal/
-// Example: 
 
+// Example: 
 #include <LiquidCrystal.h>
 
 // initialize the library with the numbers of the interface pins
@@ -11,7 +11,7 @@ void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   // Print a message to the LCD.
-  lcd.print("Hello, World!");
+  lcd.print("Hello World!");
 }
 
 void loop() {

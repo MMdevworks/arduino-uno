@@ -1,0 +1,1 @@
+// Thermistor component with LCD display to show the temperature.
